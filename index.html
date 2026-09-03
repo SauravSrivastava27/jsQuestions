@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+    <link rel="stylesheet" href="./index.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+    <code>Give a interger x, return true if it is a palindrome, false otherwise</code>
+    <div id="palindrome">
+        <label for="numberBox">Palindrome Number:</label>
+        <input type="number" id="numberBox" placeholder="Enter a number" value="" />
+        <button id="check">Check Palindrome</button>
+        <p id="result"></p>
+    </div>
+
+    <code>Give a string, return true if it is a palindrome, false otherwise</code>
+    <div id="palindrome">
+        <label for="stringBox">Palindrome String:</label>
+        <input type="text" id="stringBox" placeholder="Enter a string" value="" />
+        <button id="checkString">Check Palindrome</button>
+        <p id="resultString"></p>
+    </div>
+
+    <pre>
+        <code>
+            const inputData =
+            [
+                { "city": "Mumbai", "country": "India", "population": 20400000 },
+                { "city": "Delhi", "country": "India", "population": 32900000 },
+                { "city": "Bengaluru", "country": "India", "population": 13700000 },
+                { "city": "Pune", "country": "India", "population": 7490000 },
+                
+                { "city": "New York", "country": "USA", "population": 8800000 },
+                { "city": "Los Angeles", "country": "USA", "population": 3890000 },
+                { "city": "Chicago", "country": "USA", "population": 2740000 },
+                
+                { "city": "London", "country": "UK", "population": 9300000 },
+                { "city": "Manchester", "country": "UK", "population": 553000 },
+                { "city": "Birmingham", "country": "UK", "population": 1140000 }
+            ];
+                
+            output:
+            - group by country and sort by population
+            - group by city and sort by population
+            - group by population and sort by country
+            {
+                "India": [
+                    { "city": "Delhi", "population": 32900000 },
+                    { "city": "Mumbai", "population": 20400000 },
+                    { "city": "Bengaluru", "population": 13700000 },
+                    { "city": "Pune", "population": 7490000 }
+                ],
+                "USA": [
+                    { "city": "New York", "population": 8800000 },
+                    { "city": "Los Angeles", "population": 3890000 },
+                    { "city": "Chicago", "population": 2740000 }
+                ],
+                "UK": [
+                    { "city": "London", "population": 9300000 },
+                    { "city": "Birmingham", "population": 1140000 },
+                    { "city": "Manchester", "population": 553000 }
+                ]
+            }
+        </code>
+        <span>Value by Country:</span>
+        <code id="outputValueCountry"></code>
+        <span>Value by City:</span>
+        <code id="outputValueCity"></code>
+        <span>Value by Population:</span>
+        <code id="outputValuePopulation"></code>
+    </pre>
+    <pre>
+        <code>
+            Given an API returning a list of todos, we want to display the list in a performant way.
+
+            Here are the functional requirements:
+            - Initially, display the first 20 todos. 
+            - On the top of the page, display the total number of loaded todos.
+            - Display a "Load More" button, and every time the user clicks on it, fetch and display 20 more todos.
+            - When the total number of loaded todos reaches 100, the "Load More" button should be hidden.
+
+            Use this endpoint URL to get the todos: https://dummyjson.com/todos?limit=20&skip=0.
+
+            You may change the skip and limit query params to load new todos. The endpoint will return the following structure with a total of 20 todos:
+            {
+            "todos": [
+                {
+                "id": 1,
+                "todo": "Do something nice for someone you care about",
+                "completed": true,
+                "userId": 26
+                },
+            ],
+            }
+        </code>
+    </pre>
+    <ol id="todoList"></ol>
+    <pre>
+        <code>
+            A social media site you are working on is looking to add a real-time notification system to display new user comments.
+
+            The desired functionality for this system is:
+            - When the page loads, display the first 5 comments.
+            - Check for new comments every 5 seconds and display them without refreshing the page.
+            - Highlight new comments with a different background color for exactly 5 seconds after they are added.
+            - Remove the highlight from previous new comments after 5 seconds have elapsed.
+
+            You can use this endpoint to fetch comments for testing: https://dummyjson.com/comments?limit=5. Each comment has the following structure:
+            {
+            "comments": [
+                {
+                "id": 1,
+                "body": "You have a new follower!",
+                }
+            ]
+            }
+
+            To simulate new comments, use the skip parameter by incrementing the value passed to it.
+        </code>
+    </pre>
+    <div id="comments"></div>
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+
+</html>
