@@ -11,7 +11,7 @@ span + code {
     border-left: 4px solid #00acc1;
 }
 
-.newComments {
+.newComments, .new {
     background-color: #ffeb3b;
     border: 1px solid #fbc02d;
 }

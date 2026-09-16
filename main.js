@@ -204,10 +204,35 @@ function renderComments() {
 
 fetchComment(skipComments);
 
-setInterval(() => {
-    skipComments += 5;
-    fetchComment(skipComments);
-}, 5000);
+// setInterval(() => {
+//     skipComments += 5;
+//     fetchComment(skipComments);
+// }, 5000);
 
 // -----------------------------------------------------------------------------------------------------
 
+
+const  url = "https://jsonplaceholder.typicode.com/users";
+
+async function getUsers() {
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch users");
+        }
+
+        const users = await response.json();
+
+        users.forEach(user => {
+            console.log("Name:", user.name);
+            console.log("Username:", user.username);
+            console.log("Company Name:", user.company.name);
+
+        });
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+getUsers();
